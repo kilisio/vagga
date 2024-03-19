@@ -5,12 +5,12 @@ AR ?= ar
 
 export PREFIX ?= /usr
 export DESTDIR ?=
-export VAGGA_VERSION = $(shell git describe)
+export VAGGA_VERSION = v0.8.1
 PACKAGE_FILES = vagga apk busybox alpine-keys.apk install.sh
 COMPLETION_FILES = completions/bash-completion.sh completions/zsh-completion.sh
 
 
-all: downloads vagga
+all: downloads vagga-release
 
 with-docker: downloads
 	cargo build --no-default-features --features docker_runner
